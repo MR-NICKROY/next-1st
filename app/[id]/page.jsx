@@ -20,7 +20,8 @@ const Page = ({ params }) => {
     try {
       setLoading(true);
       // First fetch all blogs
-      const response = await fetch("http://localhost:3000/api/blog");
+      const URL = process.env.PASSWORD_DELETE_BLOG;
+      const response = await fetch(`${URL}/api/blog`);
       const data = await response.json();
 
       if (!data.success) {
